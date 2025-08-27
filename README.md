@@ -1,59 +1,187 @@
-# SweetBakeryFe
+🧁 Sweet Treats Bakery - Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+A modern, responsive web application for a local artisan bakery built with Angular
 
-## Development server
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
+![alt text](image-6.png)
+![alt text](image-7.png)
+📖 Table of Contents
 
-To start a local development server, run:
+About
+Features
+Screenshots
+Tech Stack
+Getting Started
+Project Structure
+Usage
+Contributing
+License
+Contact
 
-```bash
-ng serve
-```
+🎯 About
+Sweet Treats Bakery is a fully responsive frontend web application designed for a local artisan bakery. The project showcases modern web development practices using Angular framework, featuring an elegant user interface that highlights the bakery's products, services, and brand story.
+Project Type: School Project - Frontend Development
+Due: 28 August 2025
+Status: ✅ Completed
+✨ Features
+🏠 Home Page
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Hero Section with bakery branding and call-to-action
+Daily Specials Carousel showcasing featured items
+Product Categories overview with navigation
+Customer Testimonials section
+Store Information including hours and location
+Contact Form for customer inquiries
 
-## Code scaffolding
+🍞 Product Pages
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Artisan Breads - Sourdough, multigrain, specialty loaves
+Pastries & Desserts - Croissants, muffins, seasonal treats
+Custom Cakes - Wedding cakes, birthday cakes, special orders
+Detailed product descriptions and high-quality images
 
-```bash
-ng generate component component-name
-```
+🛒 Order Management
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Online Ordering system with intuitive interface
+Product Selection with quantity controls
+Order Summary
+Contact Integration for order confirmation
 
-```bash
-ng generate --help
-```
+📱 User Experience
 
-## Building
+Fully Responsive Design - Mobile, tablet, and desktop optimized
+Modern UI/UX with clean, bakery-themed aesthetics
+Fast Loading with optimized images and code
+Accessible Design following web accessibility standards
 
-To build the project run:
 
-```bash
-ng build
-```
+🛠️ Tech Stack
+Frontend Framework:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Angular (v16+) - Component-based architecture
+TypeScript - Type-safe JavaScript development
+Angular CLI - Development tooling
 
-## Running unit tests
+Styling & UI:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+CSS3 - Custom styling and animations
+Google Fonts - Typography (Poppins, Open Sans)
+Responsive Design - Mobile-first approach
 
-```bash
-ng test
-```
+Development Tools:
 
-## Running end-to-end tests
+Node.js - Runtime environment
+npm - Package management
+Angular DevKit - Build optimization
 
-For end-to-end (e2e) testing, run:
+🚀 Getting Started
+Prerequisites
+Before running this project, make sure you have the following installed:
 
-```bash
-ng e2e
-```
+Node.js (v18.0 or later) - Download here
+npm (comes with Node.js)
+Angular CLI (v16.0 or later)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+bash# Install Angular CLI globally
+npm install -g @angular/cli@latest
+Installation
 
-## Additional Resources
+Clone the repository
+bashgit clone https://github.com/michaeljuren/sweet-treats-bakery-fe.git
+cd sweet-treats-bakery-fe
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Install dependencies
+bashnpm install
+
+Start the development server
+bashng serve
+
+Open your browser
+Navigate to http://localhost:4200/
+
+
+The application will automatically reload when you make changes to the source files.
+Build for Production
+bash# Create production build
+ng build --prod
+
+# The build artifacts will be stored in the `dist/` directory
+📁 Project Structure
+sweet-treats-bakery-fe/
+src/
+  app/
+    components/
+      breads/
+      cakes/
+      pastries/
+      carousel/
+      ...
+    interfaces/
+    services/
+    app.component.*
+    app.config.ts
+    app.routes.ts
+  assets/
+    images/
+  
+  main.ts
+  styles.css
+
+
+💻 Usage
+Navigation
+
+Home: Landing page with overview and daily specials
+Breads: Browse artisan bread selection
+Pastries: Explore pastry and dessert offerings
+Custom Cakes: View cake gallery and ordering information
+Order: Place orders and contact the bakery
+
+Key Components
+Daily Specials Carousel
+typescript// Automatically rotates through featured items
+// Includes product images, descriptions, and prices
+// Click to navigate to full product pages
+Product Display
+typescript// Grid layout showcasing bakery items
+// Hover effects and detailed product cards
+// Category filtering and search functionality
+Responsive Design
+css/* Mobile-first responsive breakpoints */
+/* Tablet: 768px and up */
+/* Desktop: 1024px and up */
+/* Large screens: 1440px and up */
+🎓 Learning Objectives
+This project demonstrates proficiency in:
+
+✅ Angular Framework - Component architecture and routing
+✅ TypeScript - Type safety and modern JavaScript features
+✅ Responsive Web Design - Mobile-first development
+✅ CSS Grid & Flexbox - Modern layout techniques
+✅ User Experience Design - Intuitive navigation and interactions
+✅ Project Organization - Clean code structure and documentation
+
+🤝 Contributing
+This is a school project, but suggestions and feedback are welcome!
+
+Fork the project
+Create a feature branch (git checkout -b feature/AmazingFeature)
+Commit your changes (git commit -m 'Add some AmazingFeature')
+Push to the branch (git push origin feature/AmazingFeature)
+Open a Pull Request
+
+📄 License
+This project is created for educational purposes. See LICENSE file for details.
+📬 Contact
+Student: Michael-John Uren
+Email: michael16.uren@gmail.com
+Course: Web Development
+Institution: Rosebank College
+
+🔗 Live Demo
+📁 GitHub Repository
+📋 Project Documentation
