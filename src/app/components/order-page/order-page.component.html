@@ -1,0 +1,109 @@
+<div class="container">
+  <header class="page-header">
+    <h1 class="page-title">🥖 Place Your Order</h1>
+    <p class="page-subtitle">Fresh baked goods made daily with love</p>
+  </header>
+
+  <div class="order-content">
+    <div class="menu-section">
+      <h2 class="section-title">Our Menu</h2>
+
+      <div class="category-group">
+        <h3 class="category-name">🍞 Artisan Breads</h3>
+        <div class="menu-item" *ngFor="let item of breadItems">
+          <div class="item-details">
+            <div class="item-name">{{ item.name }}</div>
+            <div class="item-description">{{ item.description }}</div>
+          </div>
+          <div class="item-controls">
+            <div class="item-price">R{{ item.price.toFixed(2) }}</div>
+            <div class="quantity-controls">
+              <button class="quantity-btn" (click)="updateQuantity(item, -1)">-</button>
+              <span class="quantity-display">{{ item.qty }}</span>
+              <button class="quantity-btn" (click)="updateQuantity(item, 1)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-group">
+        <h3 class="category-name">🥐 Pastries & Sweets</h3>
+        <div class="menu-item" *ngFor="let item of pastryItems">
+          <div class="item-details">
+            <div class="item-name">{{ item.name }}</div>
+            <div class="item-description">{{ item.description }}</div>
+          </div>
+          <div class="item-controls">
+            <div class="item-price">R{{ item.price.toFixed(2) }}</div>
+            <div class="quantity-controls">
+              <button class="quantity-btn" (click)="updateQuantity(item, -1)">-</button>
+              <span class="quantity-display">{{ item.qty }}</span>
+              <button class="quantity-btn" (click)="updateQuantity(item, 1)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-group">
+        <h3 class="category-name">🎂 Custom Cakes</h3>
+        <div class="menu-item" *ngFor="let item of cakeItems">
+          <div class="item-details">
+            <div class="item-name">{{ item.name }}</div>
+            <div class="item-description">{{ item.description }}</div>
+          </div>
+          <div class="item-controls">
+            <div class="item-price">R{{ item.price.toFixed(2) }}</div>
+            <div class="quantity-controls">
+              <button class="quantity-btn" (click)="updateQuantity(item, -1)">-</button>
+              <span class="quantity-display">{{ item.qty }}</span>
+              <button class="quantity-btn" (click)="updateQuantity(item, 1)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-section">
+      <h2 class="section-title">Your Order</h2>
+      <div *ngIf="cartItems.length === 0" class="empty-cart">
+        Your cart is empty
+      </div>
+
+      <div *ngIf="cartItems.length > 0">
+        <div class="cart-item" *ngFor="let item of cartItems">
+          <div>
+            <div class="cart-item-name">{{ item.name }}</div>
+            <div class="cart-item-details">{{ item.qty }} × R{{ item.price.toFixed(2) }}</div>
+          </div>
+          <div>${{ (item.price * item.qty).toFixed(2) }}</div>
+        </div>
+
+        <div class="cart-total">
+          <div class="total-row">
+            <span>Subtotal:</span>
+            <span>R{{ subtotal.toFixed(2) }}</span>
+          </div>
+          <div class="total-row">
+            <span>Tax (15%):</span>
+            <span>R{{ tax.toFixed(2) }}</span>
+          </div>
+          <div class="total-row">
+            <span class="total-amount">Total:</span>
+            <span class="total-amount">R{{ total.toFixed(2) }}</span>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="checkout-btn"
+        [disabled]="cartItems.length === 0"
+        (click)="checkout()">
+        <i class="fas fa-shopping-cart"></i> Checkout
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="notification" [class.show]="showNotification" *ngIf="notificationMessage">
+  {{ notificationMessage }}
+</div>
