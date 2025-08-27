@@ -7,13 +7,13 @@
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
-![alt text](image-5.png)
-![alt text](image-6.png)
-![alt text](image-7.png)	
+![alt text](src/assets/images/image-1.png)
+![alt text](src/assets/images/image-2.png)
+![alt text](src/assets/images/image-3.png)
+![alt text](src/assets/images/image-4.png)
+![alt text](src/assets/images/image-5.png)
+![alt text](src/assets/images/image-6.png)
+![alt text](src/assets/images/image-7.png)	
 
 ## 📖 Table of Contents
 
