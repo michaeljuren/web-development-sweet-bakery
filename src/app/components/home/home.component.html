@@ -1,0 +1,148 @@
+ <!-- Hero Section -->
+  <section id="hero-section" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Freshly Baked Perfection</h1>
+      <p class="hero-subtitle">
+        Experience the warmth and taste of our artisan breads, pastries, and custom cakes,
+        baked fresh daily with love and the finest ingredients.
+      </p>
+
+      <div class="cta-buttons">
+        <button class="cta-button primary" (click)="onOrderNow()">
+          <i class="fas fa-shopping-bag"></i>
+          Order Now
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <div class="hero-image-content">
+        <img src="assets/images/products/baked-goods-header.jpg"  />
+      </div>
+    </div>
+  </section>
+
+  <!-- Daily Specials Carousel -->
+  <section class="section specials-section">
+    <h2 class="section-title">Today's Specials</h2>
+
+    <div class="specials-carousel">
+
+      <div class="carousel-content">
+        <div class="special-card" *ngIf="dailySpecials[currentSpecialIndex] as special">
+          <div class="special-image">
+            <i class="fas fa-image"></i>
+            <img [src]="dailySpecials[currentSpecialIndex].image" [alt]="dailySpecials[currentSpecialIndex].name" />
+          </div>
+          <div class="special-info">
+            <h3>{{ special.name }}</h3>
+            <p>{{ special.description }}</p>
+            <div class="special-price">{{ special.price }}</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="carousel-dots">
+        <span
+          class="dot"
+          *ngFor="let special of dailySpecials; let i = index"
+          [class.active]="i === currentSpecialIndex"
+          (click)="setSpecial(i)"
+        ></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Categories -->
+  <section id="products-section" class="section products-section">
+    <h2 class="section-title">Our Products</h2>
+
+    <div class="product-grid">
+      <div
+        class="product-card"
+        *ngFor="let category of productCategories"
+        (click)="navigateToCategory(category)"
+
+      >
+        <div class="card-image">
+          <img [src]="category.image" [alt]="category.title" />
+        </div>
+        <div class="card-content">
+          <h3>{{ category.title }}</h3>
+          <p>{{ category.description }}</p>
+          <div class="card-arrow">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Testimonials -->
+  <section id="testimonials-section" class="section testimonials-section">
+    <h2 class="section-title">What Our Customers Say</h2>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+        <div class="testimonial-content">
+          <i class="fas fa-quote-left quote-icon"></i>
+          <p>{{ testimonial.text }}</p>
+          <div class="testimonial-author">
+            <span>- {{ testimonial.author }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location and Hours -->
+  <section id="location-section" class="section location-section">
+    <h2 class="section-title">Visit Us</h2>
+
+    <div class="location-content">
+      <div class="map-placeholder">
+        <i class="fas fa-map-marker-alt map-icon"></i>
+        <p>Interactive Map Integration</p>
+        <small>Mapbox or Google Maps</small>
+      </div>
+
+      <div class="hours-info">
+        <div class="info-block">
+          <h3>
+            <i class="fas fa-clock"></i>
+            Hours & Contact
+          </h3>
+
+          <div class="hours">
+            <div class="hour-row">
+              <span>{{ storeHours.weekdays }}</span>
+            </div>
+            <div class="hour-row">
+              <span>{{ storeHours.weekends }}</span>
+            </div>
+          </div>
+
+          <div class="contact-details">
+            <div class="contact-row">
+              <i class="fas fa-phone"></i>
+              <span>{{ contactInfo.phone }}</span>
+            </div>
+            <div class="contact-row">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>{{ contactInfo.address }}</span>
+            </div>
+            <div class="contact-row">
+              <i class="fas fa-envelope"></i>
+              <span>{{ contactInfo.email }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
