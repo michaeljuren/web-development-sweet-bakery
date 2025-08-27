@@ -1,0 +1,50 @@
+<div class="container">
+  <header class="page-header">
+    <h1 class="page-title">
+      <span class="pastery-icon">🥐</span>
+      Pastries & Sweets
+    </h1>
+    <p class="page-subtitle">
+      Handcrafted daily using traditional methods and the finest ingredients.
+      Each pastery is a testament to our commitment to quality and flavor.
+    </p>
+  </header>
+
+  <section class="pasteries-section">
+    <div class="pasteries-grid">
+      <div class="pastery-card" *ngFor="let pastery of pasteries">
+        <div class="pastery-image">
+          <img [src]="pastery.image" [alt]="pastery.name" />
+        </div>
+        <div class="pastery-content">
+          <h3 class="pastery-name">{{ pastery.name }}</h3>
+          <p class="pastery-price">R{{ pastery.price.toFixed(2) }}</p>
+          <div class="pastery-description">
+            <p class="pastery-intro">{{ pastery.intro }}</p>
+            <ul class="pastery-features">
+              <li *ngFor="let feature of pastery.features">
+                <i class="fas fa-check-circle"></i>
+                {{ feature }}
+              </li>
+            </ul>
+          </div>
+          <div class="pastery-story">
+            <h4>Our Story</h4>
+            <p>{{ pastery.story }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-section">
+      <div class="order-content">
+        <h3 class="order-title">Ready to taste our pastries and sweets?</h3>
+        <p class="order-subtitle">Fresh baked daily, available for pickup or delivery</p>
+        <button class="order-btn" (click)="navigateToOrder()">
+          <i class="fas fa-shopping-cart"></i>
+          Order Now
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
