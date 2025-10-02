@@ -14,7 +14,7 @@
 ![alt text](src/assets/images/image-5.png)
 ![alt text](src/assets/images/image-6.png)
 ![alt text](src/assets/images/image-7.png)	
-![alt text](src/assets/images/image-8.png)	
+![alt text](src/assets/images/image-8.jpg)	
 
 ## 📖 Table of Contents
 
