@@ -4,11 +4,13 @@ import { HomeComponent } from './components/home/home.component';
 import { BreadComponent } from './components/breads/bread.component';
 import { PastriesComponent } from './components/pastries/pastries.component';
 import { CakesComponent } from './components/cakes/cakes.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'order', component: OrderPageComponent },
   { path: 'breads', component: BreadComponent },
   { path: 'pastries', component: PastriesComponent },
-  { path: 'cakes', component: CakesComponent }
+  { path: 'cakes', component: CakesComponent },
+  { path: 'checkout', component:CheckoutComponent}
 ];

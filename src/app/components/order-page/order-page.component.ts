@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 interface MenuItem {
   id: string;
@@ -128,4 +129,11 @@ export class OrderPageComponent {
       this.showNotification = false;
     }, 3000);
   }
+
+  constructor(private router: Router) {}
+
+  navigateToCheckOut(): void {
+    this.router.navigate(['/checkout']);
+  }
+
 }

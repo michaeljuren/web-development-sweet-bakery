@@ -38,3 +38,23 @@ export interface Product {
   features: string[];
   story: string;
 }
+
+export interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  qty: number;
+}
+
+ export interface CheckoutData {
+  fullName: string;
+  email: string;
+  phone: string;
+  deliveryMethod: 'pickup' | 'delivery';
+  address: string;
+  city: string;
+  zipCode: string;
+  date: string;
+  time: string;
+  notes: string;
+}
