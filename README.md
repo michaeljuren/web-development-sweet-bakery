@@ -14,11 +14,14 @@
 ![alt text](src/assets/images/image-5.png)
 ![alt text](src/assets/images/image-6.png)
 ![alt text](src/assets/images/image-7.png)	
+![alt text](src/assets/images/image-8.png)	
 
 ## 📖 Table of Contents
 
 - [About](#about)
 - [Features](#features)
+- [Timelines and Milestones](#timeline-and-milestones)
+- [Sitemap](#sitemap)
 - [Screenshots](#screenshots)
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
@@ -67,6 +70,39 @@ Sweet Treats Bakery is a fully responsive frontend web application designed for 
 - **Modern UI/UX** with clean, bakery-themed aesthetics
 - **Fast Loading** with optimized images and code
 - **Accessible Design** following web accessibility standards
+
+## ⏳ Timeline and Milestones
+
+### Phase 1: Planning and Design (Weeks 1-3)
+- **Week 1** - Requirements gathering and content strategy
+- **Week 2** - Wireframes and design mockups
+- **Week 3** - Design approval and content creation
+
+### Phase 2: Development  (Weeks 4-7)
+- **Week 4**   - Homepage and basic structure setup
+- **Week 5-6** - Product catalog and ordering system development
+- **Week 7**   - Additional features and functionality integration
+
+### Phase 3: Testing and Launch (Weeks 8-10)
+- **Week 8**  - Content population and internal testing
+- **Week 9**  - User acceptance testing and bug fixes
+- **Week 10** - Final review, launch, and post-launch monitoring
+
+## 🗺️ Site Map
+
+```
+Home
+ ├── Products
+ │     ├── Bread Page
+ │     │      └── Order Page → Checkout Page
+ │     ├── Pastries Page
+ │     │      └── Order Page → Checkout Page
+ │     └── Cake Page
+ │            └── Order Page → Checkout Page
+ ├── Testimonials
+ └── Visit Us
+
+```
 
 ## 🛠️ Tech Stack
 
@@ -220,7 +256,7 @@ This project is created for educational purposes. See `LICENSE` file for details
 
 ## 📬 Contact
 
-**Student:** Michael-John Uren  
+**Student:** Michael-John Uren (ST10465421) 
 **Email:** michael16.uren@gmail.com  
 **Course:** Web Development  
 **Institution:** Rosebank College
