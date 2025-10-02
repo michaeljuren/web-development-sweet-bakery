@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener} from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { CartBadgeComponent } from "./components/cart-badge/cart-badge.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, CartBadgeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   standalone: true
