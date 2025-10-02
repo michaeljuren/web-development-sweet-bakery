@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { CartItem, MenuItem } from '../../interfaces/interface';
+import { Subscription } from 'rxjs';
+import { CartService } from '../../services/cart.service';
 
-interface MenuItem {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  qty: number;
-}
 
 @Component({
   selector: 'app-order-page',
@@ -25,21 +21,24 @@ export class OrderPageComponent {
       name: 'Sourdough Loaf',
       description: 'Traditional sourdough, fermented for 24 hours',
       price: 45.50,
-      qty: 0
+      qty: 0,
+      category: 'bread'
     },
     {
       id: 'wholewheat',
       name: 'Whole Wheat Bread',
       description: 'Hearty whole grain with seeds',
       price: 50.00,
-      qty: 0
+      qty: 0,
+      category: 'bread'
     },
     {
       id: 'baguette',
       name: 'French Baguette',
       description: 'Crispy crust, soft interior',
       price: 25.50,
-      qty: 0
+      qty: 0,
+      category: 'bread'
     }
   ];
 
@@ -49,21 +48,24 @@ export class OrderPageComponent {
       name: 'Butter Croissant',
       description: 'Flaky, buttery layers',
       price: 12.75,
-      qty: 0
+      qty: 0,
+      category: 'pastry'
     },
     {
       id: 'muffin',
       name: 'Blueberry Muffin',
       description: 'Fresh blueberries, lemon zest',
       price: 18.50,
-      qty: 0
+      qty: 0,
+      category: 'pastry'
     },
     {
       id: 'cookie',
       name: 'Chocolate Chip Cookie',
       description: 'Chewy with premium chocolate',
       price: 6.50,
-      qty: 0
+      qty: 0,
+      category: 'pastry'
     }
   ];
 
@@ -73,67 +75,110 @@ export class OrderPageComponent {
       name: 'Custom Cake (8")',
       description: 'Vanilla, chocolate, or red velvet, custom message',
       price: 400.00,
-      qty: 0
+      qty: 0,
+      category: 'cake'
     },
     {
       id: 'wedding',
       name: 'Wedding Cake Slice',
       description: 'Red velvet with cream cheese frosting',
       price: 85.00,
-      qty: 0
+      qty: 0,
+      category: 'cake'
     }
   ];
 
   notificationMessage = '';
   showNotification = false;
+  cartItems: CartItem[] = [];
+  private cartSubscription?: Subscription;
 
-  get cartItems(): MenuItem[] {
-    return [...this.breadItems, ...this.pastryItems, ...this.cakeItems]
-      .filter(item => item.qty > 0);
+  constructor(
+    private router: Router,
+    private cartService: CartService
+  ) {}
+
+  ngOnInit(): void {
+    // Subscribe to cart changes
+    this.cartSubscription = this.cartService.cart$.subscribe((items: CartItem[]) => {
+      this.cartItems = items;
+    });
   }
 
-  get subtotal(): number {
-    return this.cartItems.reduce((sum, item) => sum + (item.price * item.qty), 0);
-  }
-
-  get tax(): number {
-    return this.subtotal * 0.15;
-  }
-
-  get total(): number {
-    return this.subtotal + this.tax;
-  }
-
-  updateQuantity(item: MenuItem, change: number): void {
-    const newQty = Math.max(0, item.qty + change);
-    item.qty = newQty;
-
-    if (change > 0) {
-      this.showNotificationMessage(`Added ${item.name} to cart!`);
+  ngOnDestroy(): void {
+    // Unsubscribe to prevent memory leaks
+    if (this.cartSubscription) {
+      this.cartSubscription.unsubscribe();
     }
   }
 
-  checkout(): void {
-    this.showNotificationMessage('Order placed successfully! Thank you!');
+  // Get quantity for a specific item
+  getItemQuantity(itemId: string): number {
+    const cartItem = this.cartService.getCartItem(itemId);
+    return cartItem ? cartItem.qty : 0;
+  }
 
-    // Reset all quantities
-    [...this.breadItems, ...this.pastryItems, ...this.cakeItems]
-      .forEach(item => item.qty = 0);
+  // Update item quantity
+  updateQuantity(item: MenuItem, change: number): void {
+    const currentQty = this.getItemQuantity(item.id);
+    const newQty = currentQty + change;
+
+    if (newQty <= 0) {
+      this.cartService.removeFromCart(item.id);
+      if (change < 0) {
+        this.showNotificationMessage(`Removed ${item.name} from cart`);
+      }
+    } else if (currentQty === 0 && change > 0) {
+      // Adding new item to cart
+      this.cartService.addToCart({
+        id: item.id,
+        name: item.name,
+        description: item.description,
+        price: item.price,
+        qty: change,
+        category: item.category ?? ''
+      });
+      this.showNotificationMessage(`Added ${item.name} to cart!`);
+    } else {
+      // Updating existing item
+      this.cartService.updateQuantity(item.id, newQty);
+      if (change > 0) {
+        this.showNotificationMessage(`Updated ${item.name} quantity`);
+      }
+    }
+  }
+
+  get subtotal(): number {
+    return this.cartService.getSubtotal();
+  }
+
+  get tax(): number {
+    return this.cartService.getTax();
+  }
+
+  get total(): number {
+    return this.cartService.getTotal();
+  }
+
+  get cartCount(): number {
+    return this.cartService.getCartCount();
+  }
+
+  navigateToCheckOut(): void {
+    if (this.cartItems.length === 0) {
+      this.showNotificationMessage('Your cart is empty!');
+      return;
+    }
+    this.router.navigate(['/checkout']);
   }
 
   private showNotificationMessage(message: string): void {
     this.notificationMessage = message;
     this.showNotification = true;
-
+    
     setTimeout(() => {
       this.showNotification = false;
     }, 3000);
-  }
-
-  constructor(private router: Router) {}
-
-  navigateToCheckOut(): void {
-    this.router.navigate(['/checkout']);
   }
 
 }

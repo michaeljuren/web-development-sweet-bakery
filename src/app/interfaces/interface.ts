@@ -44,6 +44,7 @@ export interface CartItem {
   name: string;
   price: number;
   qty: number;
+  category?: string;
 }
 
  export interface CheckoutData {
@@ -57,4 +58,13 @@ export interface CartItem {
   date: string;
   time: string;
   notes: string;
+}
+
+export interface MenuItem {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  qty: number;
+  category?: string;
 }

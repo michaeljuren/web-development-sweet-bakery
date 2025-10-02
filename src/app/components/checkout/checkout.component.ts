@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CartItem, CheckoutData } from '../../interfaces/interface';
+import { Subscription } from 'rxjs';
+import { CartService } from '../../services/cart.service';
 
 
 @Component({
@@ -14,12 +16,9 @@ import { CartItem, CheckoutData } from '../../interfaces/interface';
 })
 export class CheckoutComponent implements OnInit {
   
-  // Mock cart items - in a real app, this would come from a service
-  cartItems: CartItem[] = [
-    { id: 'sourdough', name: 'Sourdough Loaf', price: 6.50, qty: 2 },
-    { id: 'croissant', name: 'Butter Croissant', price: 2.75, qty: 4 },
-    { id: 'birthday', name: 'Birthday Cake (8")', price: 25.00, qty: 1 }
-  ];
+  
+  cartItems: CartItem[] = [];
+  private cartSubscription?: Subscription;
 
   checkoutData: CheckoutData = {
     fullName: '',
@@ -38,25 +37,44 @@ export class CheckoutComponent implements OnInit {
   orderNumber = '';
   minDate = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,
+              private cartService: CartService
+  ) {}
 
-  ngOnInit(): void {
+   ngOnInit(): void {
+    // Subscribe to cart changes
+    this.cartSubscription = this.cartService.cart$.subscribe(items => {
+      this.cartItems = items;
+      
+      // Redirect to order page if cart is empty
+      if (items.length === 0) {
+        // Optional: uncomment to auto-redirect
+        // this.router.navigate(['/order']);
+      }
+    });
+
     // Set minimum date to tomorrow
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     this.minDate = tomorrow.toISOString().split('T')[0];
   }
 
+  ngOnDestroy(): void {
+    if (this.cartSubscription) {
+      this.cartSubscription.unsubscribe();
+    }
+  }
+
   get subtotal(): number {
-    return this.cartItems.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    return this.cartService.getSubtotal();
   }
 
   get tax(): number {
-    return this.subtotal * 0.085;
+    return this.cartService.getTax();
   }
 
   get total(): number {
-    return this.subtotal + this.tax;
+    return this.cartService.getTotal();
   }
 
   submitOrder(): void {
@@ -78,13 +96,16 @@ export class CheckoutComponent implements OnInit {
     // Show success modal
     this.showSuccessModal = true;
 
-    // In a real app, you would send this data to a backend service
+    // In a real app, send data to backend
     console.log('Order submitted:', {
       orderNumber: this.orderNumber,
       items: this.cartItems,
       checkout: this.checkoutData,
       total: this.total
     });
+
+    // Clear cart after successful order
+    this.cartService.clearCart();
   }
 
   closeModal(): void {
