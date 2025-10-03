@@ -5,7 +5,9 @@
 [![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
+## Website View
 
 ![alt text](src/assets/images/image-1.png)
 ![alt text](src/assets/images/image-2.png)
@@ -16,9 +18,15 @@
 ![alt text](src/assets/images/image-7.png)	
 ![alt text](src/assets/images/image-8.jpg)	
 
+## iPad Mini View
+![alt text](src/assets/images/image-9.jpg)	
+![alt text](src/assets/images/image-10.jpg)	
+![alt text](src/assets/images/image-11.jpg)	
+
 ## 📖 Table of Contents
 
 - [About](#about)
+- [Goals of Website](#goals-of-website)
 - [Features](#features)
 - [Timelines and Milestones](#timeline-and-milestones)
 - [Sitemap](#sitemap)
@@ -26,18 +34,27 @@
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Change Log](#change-log)
+- [Usage](#-usage)
+- [References](#references)
 - [Contact](#contact)
 
-## 🎯 About
+## About
 
 Sweet Treats Bakery is a fully responsive frontend web application designed for a local artisan bakery. The project showcases modern web development practices using Angular framework, featuring an elegant user interface that highlights the bakery's products, services, and brand story.
 
 - **Project Type:** School Project - Frontend Development
-- **Due:** 28 August 2025
+- **Due:** 3rd October 2025
 - **Status:** ✅ Completed
+
+## 🎯 Goals of Website
+
+- **Increase Brand Visibility** Establish a strong online presence to reach customers beyond foot traffic
+- **Drive Sales** Enable online ordering and increase overall revenue 
+- **Customer Engagement** Build a community around the bakery's brand and values 
+- **Operational Efficiency** Reduce phone orders and in-store wait times through online ordering
+- **Improve Product Marketing** Showcase seasonal menus and special offerings effectively 
+- **Contact Form** Provide easy access to contact information and location details
 
 ## ✨ Features
 
@@ -91,7 +108,7 @@ Sweet Treats Bakery is a fully responsive frontend web application designed for 
 ## 🗺️ Site Map
 
 ```
-Home
+Home 
  ├── Products
  │     ├── Bread Page
  │     │      └── Order Page → Checkout Page
@@ -112,7 +129,7 @@ Home
 - **Angular CLI** - Development tooling
 
 **Styling & UI:**
-- **CSS3** - Custom styling and animations
+- **CSS** - Custom styling and animations
 - **Google Fonts** - Typography (Poppins, Open Sans)
 - **Responsive Design** - Mobile-first approach
 
@@ -161,15 +178,6 @@ npm install -g @angular/cli@latest
 
 The application will automatically reload when you make changes to the source files.
 
-### Build for Production
-
-```bash
-# Create production build
-ng build --prod
-
-# The build artifacts will be stored in the `dist/` directory
-```
-
 ## 📁 Project Structure
 
 ```
@@ -195,6 +203,44 @@ sweet-treats-bakery-fe/
 ├── package.json
 └── README.md
 ```
+
+## 👨🏻‍💻 Change Log
+
+### Week 1-2
+
+- Add Home component with Hero section, daily specials, products, testimonials, and location details
+
+- Add Interfaces for Daily specials, Products, Testimonials, Contact Information, Store Hours and Product Categories
+
+- Add Carousal component with HTML, CSS, and TypeScript files
+
+- Add Order Page component with menu items, shopping cart functionality
+
+- Add Location component with HTML, CSS, and TypeScript files
+
+### Week 3-5
+
+- Add Bread Component with HTML, CSS, TypeScript files, and images for artisan breads
+
+- Add Pastery Component with HTML, CSS, TypeScript files, and images for various pastries
+
+- Add Cakes Component with HTML, CSS, TypeScript files, and images for custom cakes
+
+- Add configuration files and routing setup for application components
+
+- Refactored App component with an updated layout and implemented the header with navigation and a footer
+
+- Updated project structure
+
+### Week 6-7
+
+- Added Checkout component with HTML, CSS, TypeScript files, updated routing and interfaces
+
+- Implemented cart service to manage cart items and calculate totals
+
+- Refactored checkout and order page components to integrate cart service and enhanced item management
+
+- Added a cart badge to the navigation menu
 
 ## 💻 Usage
 
@@ -229,6 +275,28 @@ sweet-treats-bakery-fe/
 /* Large screens: 1440px and up */
 ```
 
+## 📋 References
+- [1] Lepard, C. (2020). 5 web design tips for an outstanding site. [online] Wix Blog. 
+Available at: https://www.wix.com/blog/5-design-tips-for-a-professional-site.
+
+- [2] New Perspective Design (2021). What is the Cost of Creating a Website in South Africa? | How much does of a website design in South Africa. [online] New Perspective Design | Graphic & Web Design East London. 
+Available at: https://www.newperspectivestudio.co.za/wp/what-is-the-cost-of-creating-a-website-in-south-africa/.
+
+- [3] Domains South Africa. (2020). Guide To Cost Of Hosting A Website In South Africa (Table) (2025). [online] 
+Available at: https://truehost.co.za/cost-of-hosting-website-south-africa/.
+
+- [4] Bunnypants Graphic & Web Design Studio South Africa. (n.d.). | How much does web hosting cost in South Africa. [online] 
+Available at: https://www.bunnypants.co.za/how-much-does-web-hosting-cost-in-south-africa/.
+
+- [5] Williams, J. (2005). business - The Basics of Branding. [online] Entrepreneur. 
+Available at: https://www.entrepreneur.com/starting-a-business/business-the-basics-of-branding/77408.
+
+- [6] Orgil, E. (2023). Pricing Strategy. [online] DealHub. Available at: https://dealhub.io/glossary/pricing-strategy/.
+
+- ‌[7] Flowsa.com. (2024). Picture this! Ten tips for sourcing images ethically without landing in a pickle. [online] 
+Available at: https://www.flowsa.com/news/picture-this-ten-tips-for-sourcing-images-ethically-without-landing-in-a-pickle
+
+
 ## 🎓 Learning Objectives
 
 This project demonstrates proficiency in:
@@ -240,30 +308,13 @@ This project demonstrates proficiency in:
 - ✅ **User Experience Design** - Intuitive navigation and interactions
 - ✅ **Project Organization** - Clean code structure and documentation
 
-## 🤝 Contributing
-
-This is a school project, but suggestions and feedback are welcome!
-
-1. Fork the project
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is created for educational purposes. See `LICENSE` file for details.
 
 ## 📬 Contact
 
 **Student:** Michael-John Uren (ST10465421) 
 **Email:** michael16.uren@gmail.com  
-**Course:** Web Development  
+**Course:** Introduction to Web Development (WEDE5020) 
 **Institution:** Rosebank College
-
-**Project Links:**
-- 📁 [GitHub Repository](https://github.com/michaeljuren/sweet-treats-bakery-fe)
-- 📋 [Project Documentation](./docs/)
 
 ---
 
