@@ -273,6 +273,62 @@
             margin-bottom: 1rem;
         }
 
+        /* Cakes Section */
+        .cakes-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .cakes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .cake-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cake-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.15);
+        }
+
+        .cake-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .cake-content {
+            padding: 2rem;
+        }
+
+        .cake-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #d4816f;
+        }
+
+        .cake-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .cake-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
         .order-btn {
             background: #d4816f;
             color: white;
@@ -310,6 +366,10 @@
             }
 
             .pastries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cakes-grid {
                 grid-template-columns: 1fr;
             }
 
