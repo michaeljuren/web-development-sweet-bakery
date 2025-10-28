@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Treats Bakery - Freshly Baked Daily</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Sweet Treats</div>
+            <ul>
+                <li><a href="#cakes">Cakes</a></li>
+                <li><a href="#pastries">Pastries</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#visit">Visit Us</a></li>
+                <li><a href="#order">Order</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sweet Treats</h1>
+            <p>Freshly Baked with Love Every Day</p>
+        </div>
+    </section>
+
+    <!-- Daily Specials Carousel -->
+    <section class="daily-specials">
+        <h2>Today's Daily Specials</h2>
+        <div class="carousel">
+            <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <div class="carousel-inner" id="carouselInner">
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600" alt="Chocolate Cake">
+                    <div class="carousel-content">
+                        <h3>Triple Chocolate Cake</h3>
+                        <p>Rich, moist chocolate cake with three layers of pure indulgence. Made with Belgian chocolate and topped with a silky ganache.</p>
+                        <p class="price">$28.99</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600" alt="Artisan Bread">
+                    <div class="carousel-content">
+                        <h3>Artisan Sourdough</h3>
+                        <p>Traditional sourdough bread with a perfect crispy crust and soft, tangy interior. Naturally leavened and baked fresh daily.</p>
+                        <p class="price">$8.99</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600" alt="Croissants">
+                    <div class="carousel-content">
+                        <h3>Butter Croissants</h3>
+                        <p>Flaky, buttery croissants made with premium French butter. Each layer perfectly laminated for that signature crunch.</p>
+                        <p class="price">$4.50 each</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+            <div class="carousel-controls">
+                <span class="carousel-dot active" onclick="goToSlide(0)"></span>
+                <span class="carousel-dot" onclick="goToSlide(1)"></span>
+                <span class="carousel-dot" onclick="goToSlide(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Visit Us</h3>
+                <p>123 Baker Street</p>
+                <p>Cape Town, Western Cape 8001</p>
+                <p>South Africa</p>
+                <p><strong>Hours:</strong></p>
+                <p>Monday - Saturday: 7:00 AM - 7:00 PM</p>
+                <p>Sunday: 8:00 AM - 5:00 PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><strong>Phone:</strong> +27 21 123 4567</p>
+                <p><strong>Email:</strong> hello@sweettreats.co.za</p>
+                <p><strong>WhatsApp:</strong> +27 82 345 6789</p>
+                <p style="margin-top: 1rem;">Follow us on social media for daily updates and special offers!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sweet Treats Bakery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 3;
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const inner = document.getElementById('carouselInner');
+            inner.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            const dots = document.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Auto-advance carousel every 5 seconds
+        setInterval(() => moveCarousel(1), 4000);
+    </script>
+</body>
+</html>
