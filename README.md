@@ -1,6 +1,8 @@
 # 🧁 Sweet Treats Bakery - Frontend
 
-> A modern, responsive web application for a local artisan bakery built with HTML5 and CSS
+> Module: Web Development (Introduction) - WEDE5020
+> Student Name: Michael-John Uren
+> Student Number: ST10465421
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -36,7 +38,15 @@
 
 Sweet Treats Bakery is a fully responsive frontend web application designed for a local artisan bakery. The project showcases modern web development practices using HTML5 and CSS, featuring an elegant user interface that highlights the bakery's products, services, and brand story.
 
+The project consists of:
+    - Home Page
+    - Pastry Page
+    - Cake Page
+    - Visit Us Page
+    - Order Page
+
 - **Project Type:** School Project - Frontend Development
+- **Project Goals:** HTML5 structure, CSS styling, and Version Control (GitHub)
 - **Due:** 3rd October 2025
 - **Status:** ✅ Completed
 
