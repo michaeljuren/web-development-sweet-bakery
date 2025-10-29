@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Sweet Treats Bakery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Sweet Treats</div>
+            <ul>
+                <li><a href="#cakes">Cakes</a></li>
+                <li><a href="#pastries">Pastries</a></li>
+                <li><a href="#visit">Visit Us</a></li>
+                <li><a href="#order">Order</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Place Your Order</h1>
+            <p>Select your items and we'll have them ready for you</p>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section class="order-form-section">
+        <div class="order-container">
+            <div class="order-form">
+                <h2>Select Your Items</h2>
+                
+                <!-- Cakes -->
+                <div class="product-section">
+                    <h3>Cakes</h3>
+                    <div class="product-item">
+                        <div class="product-info">
+                            <span class="product-name">Triple Chocolate Cake</span>
+                            <span class="product-price">R380.00</span>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" onclick="updateQuantity('chocolate-cake', -1)">-</button>
+                            <span class="quantity-display" id="qty-chocolate-cake">0</span>
+                            <button class="quantity-btn" onclick="updateQuantity('chocolate-cake', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-info">
+                            <span class="product-name">Classic Vanilla Cake</span>
+                            <span class="product-price">R320.50</span>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" onclick="updateQuantity('vanilla-cake', -1)">-</button>
+                            <span class="quantity-display" id="qty-vanilla-cake">0</span>
+                            <button class="quantity-btn" onclick="updateQuantity('vanilla-cake', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-info">
+                            <span class="product-name">Red Velvet Cake</span>
+                            <span class="product-price">R390.90</span>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" onclick="updateQuantity('red-velvet-cake', -1)">-</button>
+                            <span class="quantity-display" id="qty-red-velvet-cake">0</span>
+                            <button class="quantity-btn" onclick="updateQuantity('red-velvet-cake', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pastries -->
+                <div class="product-section">
+                    <h3>Pastries</h3>
+                    <div class="product-item">
+                        <div class="product-info">
+                            <span class="product-name">Blueberry Muffin</span>
+                            <span class="product-price">R13.50 each</span>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" onclick="updateQuantity('blueberry-muffin', -1)">-</button>
+                            <span class="quantity-display" id="qty-blueberry-muffin">0</span>
+                            <button class="quantity-btn" onclick="updateQuantity('blueberry-muffin', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-info">
+                            <span class="product-name">Chocolate Chip Cookie</span>
+                            <span class="product-price">R9.50 each</span>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" onclick="updateQuantity('choc-chip-cookie', -1)">-</button>
+                            <span class="quantity-display" id="qty-choc-chip-cookie">0</span>
+                            <button class="quantity-btn" onclick="updateQuantity('choc-chip-cookie', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-info">
+                            <span class="product-name">Chocolate Croissant</span>
+                            <span class="product-price">R12.50 each</span>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" onclick="updateQuantity('chocolate-croissant', -1)">-</button>
+                            <span class="quantity-display" id="qty-chocolate-croissant">0</span>
+                            <button class="quantity-btn" onclick="updateQuantity('chocolate-croissant', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Customer Info -->
+                <h2 style="margin-top: 2rem;">Your Information</h2>
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="orderType">Order Type *</label>
+                        <select id="orderType" name="orderType" required>
+                            <option value="">Select an option</option>
+                            <option value="pickup">Pickup</option>
+                            <option value="delivery">Delivery</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupDate">Preferred Date *</label>
+                            <input type="date" id="pickupDate" name="pickupDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickupTime">Preferred Time *</label>
+                            <input type="time" id="pickupTime" name="pickupTime" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialInstructions">Special Instructions</label>
+                        <textarea id="specialInstructions" name="specialInstructions" placeholder="Any dietary requirements, custom messages, or other special requests?"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn" disabled>Place Order</button>
+                </form>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div id="summaryItems">
+                    <div class="empty-cart">Your cart is empty</div>
+                </div>
+                <div id="summaryTotal" style="display: none;">
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span id="totalPrice">R0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Visit Us</h3>
+                <p>123 Bakery Street</p>
+                <p>Cape Town, Western Cape 10111</p>
+                <p>South Africa</p>
+                <p><strong>Hours:</strong></p>
+                <p>Monday - Saturday: 7:00 AM - 7:00 PM</p>
+                <p>Sunday: 8:00 AM - 5:00 PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><strong>Phone:</strong> +27 21 123 4567</p>
+                <p><strong>Email:</strong> sweettreats@gmail.co.za</p>
+                <p><strong>WhatsApp:</strong> +27 82 345 6789</p>
+                <p style="margin-top: 1rem;">Follow us on social media for daily updates and special offers!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sweet Treats Bakery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const products = {
+            'chocolate-cake'     : { name: 'Triple Chocolate Cake', price: 380.00 },
+            'vanilla-cake'       : { name: 'Classic Vanilla Cake' , price: 320.50 },
+            'red-velvet-cake'    : { name: 'Red Velvet Cake'      , price: 390.90 },
+            'blueberry-muffin'   : { name: 'BlueBerry Muffin'     , price: 13.50  },
+            'choc-chip-cookie'   : { name: 'Chocolate Chip Cookie', price: 9.50   },
+            'chocolate-croissant': { name: 'Chocolate Croissant'  , price: 12.50  },
+        };
+
+        let cart = {};
+
+        function updateQuantity(productId, change) {
+            const currentQty = cart[productId] || 0;
+            const newQty = Math.max(0, currentQty + change);
+            
+            if (newQty === 0) {
+                delete cart[productId];
+            } else {
+                cart[productId] = newQty;
+            }
+            
+            document.getElementById(`qty-${productId}`).textContent = newQty;
+            updateSummary();
+        }
+
+        function updateSummary() {
+            const summaryItems = document.getElementById('summaryItems');
+            const summaryTotal = document.getElementById('summaryTotal');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            if (Object.keys(cart).length === 0) {
+                summaryItems.innerHTML = '<div class="empty-cart">Your cart is empty</div>';
+                summaryTotal.style.display = 'none';
+                submitBtn.disabled = true;
+                return;
+            }
+            
+            let html = '';
+            let total = 0;
+            
+            for (const [productId, quantity] of Object.entries(cart)) {
+                const product = products[productId];
+                const itemTotal = product.price * quantity;
+                total += itemTotal;
+                
+                html += `
+                    <div class="summary-item">
+                        <span>${quantity}x ${product.name}</span>
+                        <span>R${itemTotal.toFixed(2)}</span>
+                    </div>
+                `;
+            }
+            
+            summaryItems.innerHTML = html;
+            summaryTotal.style.display = 'block';
+            document.getElementById('totalPrice').textContent = `R${total.toFixed(2)}`;
+            submitBtn.disabled = false;
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const orderDetails = Object.entries(cart)
+                .map(([productId, qty]) => `${qty}x ${products[productId].name}`)
+                .join(', ');
+            
+            const total = Object.entries(cart)
+                .reduce((sum, [productId, qty]) => sum + (products[productId].price * qty), 0);
+            
+            alert(`Thank you for your order!\n\nItems: ${orderDetails}\nTotal: R${total.toFixed(2)}\n\nWe will contact you shortly to confirm the details and payment.`);
+            
+            // Reset form and cart
+            event.target.reset();
+            cart = {};
+            Object.keys(products).forEach(id => {
+                document.getElementById(`qty-${id}`).textContent = '0';
+            });
+            updateSummary();
+        }
+
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('pickupDate').setAttribute('min', today);
+    </script>
+</body>
+</html>
