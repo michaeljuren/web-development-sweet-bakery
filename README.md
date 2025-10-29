@@ -41,11 +41,11 @@
 Sweet Treats Bakery is a fully responsive frontend web application designed for a local artisan bakery. The project showcases modern web development practices using HTML5 and CSS, featuring an elegant user interface that highlights the bakery's products, services, and brand story.
 
 The project consists of:
-    - Home Page
-    - Pastry Page
-    - Cake Page
-    - Visit Us Page
-    - Order Page
+- Home Page
+- Pastry Page
+- Cake Page
+- Visit Us Page
+- Order Page
 
 - **Project Type:** School Project - Frontend Development
 - **Project Goals:** HTML5 structure, CSS styling, and Version Control (GitHub)
