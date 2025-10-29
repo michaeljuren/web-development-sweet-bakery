@@ -188,40 +188,7 @@
         .carousel-btn.next {
             right: 10px;
         }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: #fff;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .footer-section h3 {
-            color: #d4816f;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .footer-section p {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #555;
-        }
-
+        
         /* Pastries Section */
         .pastries-section {
             max-width: 1200px;
@@ -275,6 +242,10 @@
             margin-bottom: 1.5rem;
         }
 
+        .pastry-description{
+           height: 210px 
+        }
+
         .pastry-footer {
             margin-top: auto;
         }
@@ -321,6 +292,9 @@
 
         .cake-content {
             padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .cake-content h3 {
@@ -329,10 +303,14 @@
             color: #d4816f;
         }
 
-        .cake-content p {
+        .cake-content > p {
             font-size: 1.1rem;
             color: #666;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cake-description{
+           height: 210px 
         }
 
         .cake-price {
@@ -340,6 +318,10 @@
             font-weight: bold;
             color: #333;
             margin-bottom: 1rem;
+        }
+
+        .cake-footer {
+            margin-top: auto;
         }
 
         .order-btn {
@@ -681,6 +663,39 @@
         .submit-btn:disabled {
             background: #ccc;
             cursor: not-allowed;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #d4816f;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
         }
 
         /* Responsive */
