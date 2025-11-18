@@ -1,3 +1,5 @@
+// Update Order Summary and Total
+
 const products = {
             'chocolate-cake'     : { name: 'Triple Chocolate Cake', price: 380.00 },
             'vanilla-cake'       : { name: 'Classic Vanilla Cake' , price: 320.50 },
