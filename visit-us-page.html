@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visit Us - Sweet Treats Bakery</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- MapBox CSS and JS added to template for map integration -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -51,12 +54,10 @@
         <div class="map-container">
             <!-- Map Integration Placeholder -->
             <div class="map-placeholder">
-                <h3>📍 Map Integration Area</h3>
+                <h3>📍 Map</h3>
                 <p><strong>123 Bakery Street</strong><br>
                 Cape Town, Western Cape 10111<br>
                 South Africa</p>
-                <p>Integrate Google Maps, OpenStreetMap, or your preferred mapping service here</p>
-                <a href="https://www.google.com/maps" target="_blank" class="map-link">Open in Google Maps</a>
             </div>
         </div>
     </section>
@@ -107,5 +108,9 @@
             <p>&copy; 2025 Sweet Treats Bakery. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- javascript to handle MapBox map integration -->
+    <script src="javascript/mapbox-integration.js"></script>
+
 </body>
 </html>    
