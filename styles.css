@@ -51,6 +51,21 @@
             color: #d4816f;
         }
 
+        nav a.active {
+            color: #d4816f;
+            position: relative;
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #d4816f;
+        }
+
         /* Hero Section */
         .hero {
             height: 500px;
