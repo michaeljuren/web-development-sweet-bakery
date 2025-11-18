@@ -53,7 +53,59 @@ function removeError(inputElement) {
     inputElement.style.borderColor = '';
 }
 
+// Generate order summary for email
+function generateOrderSummary() {
+    let orderItems = '';
+    let total = 0;
+    
+    // Get cart items from your existing cart object
+    if (typeof cart !== 'undefined' && typeof products !== 'undefined') {
+        for (const [productId, quantity] of Object.entries(cart)) {
+            const product = products[productId];
+            const itemTotal = product.price * quantity;
+            total += itemTotal;
+            
+            orderItems += `${quantity}x ${product.name} - R${itemTotal.toFixed(2)}\n`;
+        }
+    }
+    
+    return {
+        items: orderItems || 'No items in cart',
+        total: `R${total.toFixed(2)}`
+    };
+}
 
+// Send email using EmailJS
+function sendOrderEmail(formData, orderSummary) {
+    // EmailJS template parameters
+    const templateParams = {
+        to_email: formData.email,
+        customer_name: `${formData.firstName} ${formData.lastName}`,
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        order_type: formData.orderType,
+        preferred_date: formData.preferredDate,
+        preferred_time: formData.preferredTime,
+        special_instructions: formData.specialInstructions || 'None',
+        order_items: orderSummary.items,
+        order_total: orderSummary.total
+    };
+    
+    // Send email using EmailJS
+    // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_PUBLIC_KEY' with your actual EmailJS credentials
+    emailjs.send('service_ylxq6gs', 'template_8dxz3xg', templateParams, 'WHM-Ym1km-l06e9pG')
+        .then(function(response) {
+            console.log('Email sent successfully!', response.status, response.text);
+            alert('Order placed successfully! A confirmation email has been sent to ' + formData.email);
+            // Reset form and cart if needed
+            // document.querySelector('form').reset();
+        }, function(error) {
+            console.error('Email failed to send:', error);
+            alert('Order received, but there was an issue sending the confirmation email. Please contact us to confirm your order.');
+        });
+}
 
 // Handle form submission
 function handleSubmit(event) {
@@ -121,6 +173,34 @@ function handleSubmit(event) {
         alert('Please add items to your cart before placing an order.');
         isValid = false;
     }
+
+    // If all validations pass, proceed with email
+    if (isValid) {
+        console.log('Form is valid! Processing order...');
+        
+        // Collect form data
+        const formData = {
+            firstName: firstName.value.trim(),
+            lastName: lastName.value.trim(),
+            email: email.value.trim(),
+            phone: phone.value.trim(),
+            orderType: orderType.value,
+            preferredDate: pickupDate.value,
+            preferredTime: pickupTime.value,
+            specialInstructions: specialInstructions.value.trim()
+        };
+        
+        // Generate order summary
+        const orderSummary = generateOrderSummary();
+        
+        // Send email
+        sendOrderEmail(formData, orderSummary);
+    } else {
+        console.log('Form validation failed');
+    }
+    
+    return isValid;
+}
     
 // Enable submit button when user starts filling the form
 document.addEventListener('DOMContentLoaded', function() {
@@ -166,6 +246,5 @@ document.addEventListener('DOMContentLoaded', function() {
             removeError(this);
         }
     });
-
-   
+ 
 });
