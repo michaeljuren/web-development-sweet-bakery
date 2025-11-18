@@ -33,12 +33,18 @@
         <div class="cakes-grid">
             <!-- Chocolate Cake -->
             <div class="cake-card">
-                <img src="images/chocolate-cake.webp" alt="Chocolate Cake">
+                <img src="images/chocolate-cake.webp" alt="Chocolate Cake" onclick="openLightbox(this.src)">
                 <div class="cake-content">
                     <h3>Triple Chocolate</h3>
                     <p class="cake-description">Indulge in three layers of moist chocolate sponge, filled with rich chocolate ganache and topped with a silky smooth chocolate frosting. Made with premium Belgian chocolate for the ultimate chocolate lover's dream.</p>
                     <p class="cake-price">R380.00</p>
                     <button class="order-btn">Order Now</button>
+                </div>
+
+                <!-- Lightbox overlay (hidden initially) -->
+                <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+                    <button class="close">&times;</button>
+                    <img id="lightbox-img" src="" alt="Enlarged view">
                 </div>
             </div>
 
@@ -93,6 +99,8 @@
 
     <!-- javascript to handle navigation between templates-->
     <script src="javascript/navigation.js"></script>
-    
+
+    <!-- javascript to handle the lightbox gallery-->
+    <script src="javascript/lightbox-gallery.js"></script>
 </body>
 </html>
