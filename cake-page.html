@@ -31,30 +31,30 @@
     </section>
 
     <!-- Cakes Section -->
+    <!-- Lightbox overlay (hidden initially) -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="close" onclick="closeLightbox()">&times;</button>
+        <img id="lightbox-img" src="">
+    </div>
+ 
     <section class="cakes-section">
         <div class="cakes-grid">
             <!-- Chocolate Cake -->
             <div class="cake-card">
                 <img src="images/chocolate-cake.webp" alt="Chocolate Cake" onclick="openLightbox(this.src)">
                 <div class="cake-content">
-                    <h3>Triple Chocolate</h3>
+                    <h3>Decadent Triple Chocolate</h3>
                     <p class="cake-description">Indulge in three layers of moist chocolate sponge, filled with rich chocolate ganache and topped with a silky smooth chocolate frosting. Made with premium Belgian chocolate for the ultimate chocolate lover's dream.</p>
                     <p class="cake-price">R380.00</p>
                     <a href="order-page.html" class="order-button">Order Now</a>
                 </div>
-
-                <!-- Lightbox overlay (hidden initially) -->
-                <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-                    <button class="close">&times;</button>
-                    <img id="lightbox-img" src="" alt="Enlarged view">
-                </div>
-            </div>
+            </div>    
 
             <!-- Vanilla Cake -->
             <div class="cake-card">
-                <img src="images/vanilla-cake.webp" alt="Vanilla Cake">
+                <img src="images/vanilla-cake.webp" alt="Vanilla Cake" onclick="openLightbox(this.src)">
                 <div class="cake-content">
-                    <h3>Classic Vanilla</h3>
+                    <h3> Fluffy Classic Vanilla</h3>
                     <p class="cake-description">A timeless favorite featuring layers of light and fluffy vanilla sponge with Madagascar vanilla bean buttercream frosting. Elegantly decorated and perfect for celebrations. Simple yet sophisticated in every bite.</p>
                     <p class="cake-price">R320.50</p>
                     <a href="order-page.html" class="order-button">Order Now</a>
@@ -63,9 +63,9 @@
 
             <!-- Red Velvet Cake -->
             <div class="cake-card">
-                <img src="images/red-velvet-cake.jpg" alt="Red Velvet Cake">
+                <img src="images/red-velvet-cake.jpg" alt="Red Velvet Cake" onclick="openLightbox(this.src)">
                 <div class="cake-content">
-                    <h3>Classic Red Velvet</h3>
+                    <h3> Rich Classic Red Velvet</h3>
                     <p class="cake-description">Our signature red velvet cake with its distinctive cocoa flavor and vibrant red hue, layered with tangy cream cheese frosting. Moist, velvety, and absolutely irresistible. A Southern classic done right.</p>
                     <p class="cake-price">R390.90</p>
                     <a href="order-page.html" class="order-button">Order Now</a>
