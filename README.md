@@ -9,20 +9,6 @@
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-## Website View
-
-![alt text](submission/home-page.png)
-![alt text](submission/pastry-page.png)
-![alt text](submission/cake-page.png)
-![alt text](submission/visit-us-page.png)
-![alt text](submission/order-page.png)
-
-## iPad Mini View
-
-![alt text](submission/ipad-view/home-page.png)
-![alt text](submission/ipad-view/pastry-page.png)
-![alt text](submission/ipad-view/order-page.png)
-
 ## 📖 Table of Contents
 
 - [About](#about)
@@ -40,10 +26,10 @@
 
 Sweet Treats Bakery is a fully responsive frontend web application designed for a local artisan bakery. The project showcases modern web development practices using HTML5 and CSS, featuring an elegant user interface that highlights the bakery's products, services, and brand story.
 
-The project consists of: Home Page , Pastry Page, Cake Page, Visit Us Page, Order Page
+The project consists of: Home Page , Pastry Page, Cake Page, Visit Us Page, and Order Page
 
 - **Project Type:** School Project - Frontend Development
-- **Project Goals:** HTML5 structure, CSS styling, and Version Control (GitHub)
+- **Project Goals:** HTML5 structure, CSS styling, JavaScript and Version Control (GitHub)
 - **Due:** 19th November 2025
 - **Status:** ✅ Completed
 
@@ -104,21 +90,11 @@ The project consists of: Home Page , Pastry Page, Cake Page, Visit Us Page, Orde
 
 ## 🗺️ Site Map
 
-```
-Home 
- ├── Products
- │     ├── Pastries Page
- │     │      └── Order Page 
- │     └── Cake Page
- │            └── Order Page
- └── Visit Us
- |__ Order Page
-
-```
+![alt text](submission/sitemap.png)
 
 ## 📁 Project Structure
 
-![alt text](submission/project-structure-v2.png)
+![alt text](submission/project-structure.png)
 
 ## 👨🏻‍💻 Change Log
 
@@ -150,15 +126,74 @@ Home
 
 ### Week 6-9
 
+SEO Enhancements
+
+- Added meta descriptions to all HTML pages for improved SEO.
+
+- Added robots.txt and sitemap.xml for better site indexing.
+
+- Updated both files with the correct domain name.
+
+Navigation & Template Improvements
+
+- Added navigation to the Home page from other templates.
+
+- Added navigation script to multiple pages for improved template handling.
+
+UI & UX Enhancements
+
+- Added social media icons and related styles across multiple pages.
+
+- Enhanced cake image hover effects and updated cake descriptions.
+
+- Added lightbox functionality for cake images with overlay and close feature.
+
+Visit Us Page Updates
+
+- Added Mapbox integration to the Visit Us page.
+
+- Updated and improved Mapbox implementation.
+
+- Added enquiry form with EmailJS integration for customer inquiries.
+
+- Implemented real-time validation and improved error messages on the enquiry form.
+
+- Enhanced the Visit Us page with social media icons and additional UI refinements.
+
+Order Page Enhancements
+
+- Added EmailJS library to the Order page.
+
+- Added form validation and email sending script to the Order page HTML.
+
+- Added order summary generation and email sending functionality using EmailJS.
+
+- Added form validation functions and error handling for user input.
+
+- Removed inline JavaScript from the Order page by moving order summary update logic into a dedicated JS file.
+
+- Added order buttons to cake items.
 
 
 ## 📍Navigation
 
 - **Home:** Landing page with overview and daily specials
 - **Pastries:** Explore pastry and dessert offerings  
-- **Cakes:** View cake gallery and ordering information
-- **Visit Us:** Location and contact details of bakery
-- **Order:** Place orders and contact the bakery
+- **Cakes:** View cake gallery and cake descriptions
+- **Visit Us:** Location and enquiry form of bakery which is emailed to the customer 
+- **Order:** Place orders and contact the bakery, the order summary is then sent to the cusomer
+
+```
+Home 
+ ├── Products
+ │     ├── Pastries Page
+ │     │      └── Order Page 
+ │     └── Cake Page
+ │            └── Order Page
+ └── Visit Us
+ |__ Order Page
+
+```
 
 ## 📋 References
 
@@ -186,7 +221,7 @@ Available at: https://www.flowsa.com/news/picture-this-ten-tips-for-sourcing-ima
 
 This project demonstrates proficiency in:
 
-- ✅ **Responsive Web Design** - Mobile-first development
+- ✅ **Responsive Web Design** - Web-first development
 - ✅ **CSS Grid & Flexbox** - Modern layout techniques
 - ✅ **User Experience Design** - Intuitive navigation and interactions
 - ✅ **Project Organization** - Clean code structure and documentation
