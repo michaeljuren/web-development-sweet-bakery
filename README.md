@@ -44,7 +44,7 @@ The project consists of: Home Page , Pastry Page, Cake Page, Visit Us Page, Orde
 
 - **Project Type:** School Project - Frontend Development
 - **Project Goals:** HTML5 structure, CSS styling, and Version Control (GitHub)
-- **Due:** 3rd October 2025
+- **Due:** 19th November 2025
 - **Status:** ✅ Completed
 
 ## 🎯 Goals of Website
@@ -118,7 +118,7 @@ Home
 
 ## 📁 Project Structure
 
-![alt text](submission/project-structure.png)
+![alt text](submission/project-structure-v2.png)
 
 ## 👨🏻‍💻 Change Log
 
@@ -147,6 +147,10 @@ Home
 - Add  HTML, CSS, and image for hero section to Order Page
 
 - Updated project structure
+
+### Week 6-9
+
+
 
 ## 📍Navigation
 
