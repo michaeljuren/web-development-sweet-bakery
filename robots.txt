@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sweertreats.com/sitemap.xml
+Sitemap: https://sweettreats.com/sitemap.xml
