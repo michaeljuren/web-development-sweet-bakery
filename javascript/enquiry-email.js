@@ -1,5 +1,6 @@
 // Enquiry validation and Email service for Enquiry confirmation
        
+// Initialize EmailJS with public key
 emailjs.init('WHM-Ym1km-l06e9pG');
 
         const form = document.getElementById('enquiryForm');
