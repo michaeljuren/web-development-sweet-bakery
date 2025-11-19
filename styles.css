@@ -339,20 +339,23 @@
             margin-top: auto;
         }
 
-        .order-btn {
-            background: #d4816f;
+        .order-button {
+            background-color: #d4816f; /* Adjust to match your theme */
             color: white;
+            padding: 12px 24px;
             border: none;
-            padding: 0.8rem 2rem;
-            font-size: 1rem;
             border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
-            transition: background 0.3s;
-            font-family: 'Georgia', serif;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            text-align: center;
         }
 
-        .order-btn:hover {
-            background: #c2705e;
+        .order-button:hover {
+            background-color: #c2705e;
         }
 
         /* Enquiry Section */

@@ -25,5 +25,5 @@ let currentSlide = 0;
             });
         }
 
-        // Auto-advance carousel every 4 seconds
-        setInterval(() => moveCarousel(1), 4000);
+        // Auto-advance carousel every 6 seconds
+        setInterval(() => moveCarousel(1), 6000);

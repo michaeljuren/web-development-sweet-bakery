@@ -6,8 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Map hash links to actual page URLs
     const pageMap = {
-        '#cakes'   : 'cake-page.html',
-        '#pastries': 'pastry-page.html',
+        '#home'    : 'home-page.html'    ,
+        '#cakes'   : 'cake-page.html'    ,
+        '#pastries': 'pastry-page.html'  ,
         '#visit'   : 'visit-us-page.html',
         '#order'   : 'order-page.html'
     };
