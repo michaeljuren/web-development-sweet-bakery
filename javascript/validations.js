@@ -94,13 +94,12 @@ function sendOrderEmail(formData, orderSummary) {
     };
     
     // Send email using EmailJS
-    // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_PUBLIC_KEY' with your actual EmailJS credentials
     emailjs.send('service_ylxq6gs', 'template_8dxz3xg', templateParams, 'WHM-Ym1km-l06e9pG')
         .then(function(response) {
             console.log('Email sent successfully!', response.status, response.text);
             alert('Order placed successfully! A confirmation email has been sent to ' + formData.email);
             // Reset form and cart if needed
-            // document.querySelector('form').reset();
+            document.querySelector('form').reset();
         }, function(error) {
             console.error('Email failed to send:', error);
             alert('Order received, but there was an issue sending the confirmation email. Please contact us to confirm your order.');

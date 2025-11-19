@@ -8,6 +8,9 @@
     <!-- MapBox CSS and JS added to template for map integration -->
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+
+    <!-- EmailJS library to send the enquiry information to the customer -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -32,20 +35,6 @@
         </div>
     </section>
 
-    <!-- Info Section -->
-    <section class="info-section">
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>🥐 Pastries & Cookies</h3>
-                <p>Buttery croissants, Danish pastries, muffins, cookies, and more throughout the day</p>
-            </div>
-            <div class="info-card">
-                <h3>🎂 Cakes</h3>
-                <p>Beautiful celebration cakes for birthdays, weddings, and special occasions - order in advance</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Map Section -->
     <section class="map-section">
         <h2>Find Us Here</h2>
@@ -62,26 +51,40 @@
         </div>
     </section>
 
-    <!-- Contact Info -->
-    <section class="contact-info">
-        <h2>Opening Hours & Contact</h2>
-        <div class="contact-details">
-            <div class="contact-item">
-                <h3>Opening Hours</h3>
-                <p>Monday - Saturday<br>7:00 AM - 7:00 PM</p>
-                <p>Sunday<br>8:00 AM - 5:00 PM</p>
+    <!-- Enquiry Section -->
+    <section class="enquiry-section">
+        <div class="enquiry-container">
+        <h2>Have a Question?</h2>
+        <p>We'd love to hear from you! Send us your enquiry and we'll get back to you soon.</p> 
+            <form id="enquiryForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="enquiry">Your Enquiry</label>
+                    <textarea id="enquiry" name="enquiry" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Enquiry</button>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                <h3>✓ Enquiry Captured!</h3>
+                <p>Thank you for reaching out. We've received your enquiry and will get back to you shortly.</p>
             </div>
-            <div class="contact-item">
-                <h3>Phone & Email</h3>
-                <p>📞 +27 21 123 4567</p>
-                <p>📧 sweettreats@gmail.co.za</p>
+
+            <div class="error-message" id="errorMessage">
+                <h3>✗ Something went wrong</h3>
+                <p>Please try again or contact us directly.</p>
             </div>
-            <div class="contact-item">
-                <h3>WhatsApp</h3>
-                <p>💬 +27 82 345 6789</p>
-                <p>Message us for quick orders and inquiries</p>
-            </div>
-        </div>
+        </div> 
     </section>
 
     <!-- Footer -->
@@ -114,6 +117,9 @@
 
      <!-- javascript to handle MapBox map integration -->
     <script src="javascript/mapbox-integration.js"></script>
+
+    <!-- javascript to handle email confirmation for enquiry-->
+    <script src="javascript/enquiry-email.js"></script> 
 
 </body>
 </html>    
